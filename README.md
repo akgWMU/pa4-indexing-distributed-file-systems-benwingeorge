@@ -241,7 +241,7 @@ Best for: Mixed read-write workloads
 
 **2-3 Tree:**
 ```python
-⚠️ Similar to B+ but more splits
+Similar to B+ but more splits
 - More frequent rebalancing
 - Lock propagation during splits
 - Simpler than B+ crabbing
@@ -349,8 +349,8 @@ Example: MySQL InnoDB uses 16KB pages
 **Hash Table: MODERATE**
 ```
 Disk considerations:
-⚠️ Random access pattern
-⚠️ Resizing requires full rewrite
+Random access pattern
+Resizing requires full rewrite
 Fast single-key access
 
 Used in: Key-value stores (Redis on-disk, LevelDB)
@@ -471,8 +471,8 @@ Each server maintains B+ tree of its files
 | Priority | Structure | Reasoning |
 |----------|-----------|-----------|
 | **1st Choice** | **B+ Tree** | Best overall for file metadata<br>Excellent range queries<br>Disk-friendly<br>Industry standard |
-| **2nd Choice** | **Hash Table** | Best for pure key-value<br>⚠️ No ordering support<br>Highest throughput |
-| **3rd Choice** | **2-3 Tree** | ⚠️ Only for in-memory, small datasets<br>Not production-ready for large scale |
+| **2nd Choice** | **Hash Table** | Best for pure key-value<br>No ordering support<br>Highest throughput |
+| **3rd Choice** | **2-3 Tree** | Only for in-memory, small datasets<br>Not production-ready for large scale |
 
 ---
 
@@ -487,7 +487,7 @@ Each server maintains B+ tree of its files
 | **Ordered List (s)** | 2.5 | 0.3 | 0.5 |
 | **Memory Overhead** | 1.3x | 1.1x | 1.8x |
 | **Height/Depth** | N/A | 3 | 13 |
-| **Range Query** | O(n) | O(log n + k) | ⚠️ O(log n + k) |
+| **Range Query** | O(n) | O(log n + k) | O(log n + k) |
 
 ---
 
